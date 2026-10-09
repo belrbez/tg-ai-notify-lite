@@ -1,0 +1,16 @@
+{
+  "name": "tg-ai-notify-lite",
+  "owner": {
+    "name": "Alex Vasiliev"
+  },
+  "metadata": {
+    "description": "Отправка сообщений и файлов из Claude Code в ваш Telegram"
+  },
+  "plugins": [
+    {
+      "name": "tg-ai-notify-lite",
+      "source": "./",
+      "description": "По вашей просьбе Claude отправляет сообщения и файлы в ваш личный чат Telegram через вашего бота."
+    }
+  ]
+}

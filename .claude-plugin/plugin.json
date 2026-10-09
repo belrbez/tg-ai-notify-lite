@@ -1,0 +1,44 @@
+{
+  "name": "tg-ai-notify-lite",
+  "version": "0.2.1",
+  "description": "По вашей просьбе Claude отправляет сообщения и файлы в ваш личный чат Telegram через вашего бота. Нужен Node.js 22+.",
+  "author": {
+    "name": "Alex Vasiliev"
+  },
+  "license": "MIT",
+  "keywords": [
+    "telegram",
+    "notifications",
+    "уведомления"
+  ],
+  "userConfig": {
+    "bot_token": {
+      "type": "string",
+      "title": "Токен Telegram-бота",
+      "description": "Токен от @BotFather (выглядит как 123456789:AA…). Можно оставить пустым и ввести позже на странице настройки — Claude даст ссылку.",
+      "sensitive": true,
+      "required": false
+    },
+    "quiet_hours": {
+      "type": "string",
+      "title": "Тихие часы",
+      "description": "По умолчанию выключены (off). Чтобы ночью сообщения приходили без звука, укажите интервал HH:MM-HH:MM по времени компьютера, например 23:00-08:00.",
+      "default": "off",
+      "required": false
+    }
+  },
+  "mcpServers": {
+    "telegram": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/server/index.mjs"
+      ],
+      "env": {
+        "TGN_BOT_TOKEN": "${user_config.bot_token}",
+        "TGN_QUIET_HOURS": "${user_config.quiet_hours}",
+        "TGN_DATA_DIR": "${CLAUDE_PLUGIN_DATA}",
+        "TGN_PROJECT_DIR": "${CLAUDE_PROJECT_DIR}"
+      }
+    }
+  }
+}

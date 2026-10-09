@@ -1,0 +1,16 @@
+{
+  "name": "tg-ai-notify-lite",
+  "version": "0.2.1",
+  "description": "Плагин Claude Code: сообщения и файлы в ваш Telegram по явной просьбе",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "validate": "claude plugin validate --strict . && claude plugin validate --strict .claude-plugin/plugin.json",
+    "check": "npm test && npm run validate"
+  }
+}
